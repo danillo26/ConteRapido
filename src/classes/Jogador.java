@@ -5,8 +5,8 @@ public class Jogador extends Pessoa {
 	private int recorde;
 	private int numJogos;
 	
-	public Jogador(String nome, Genero genero, int recorde, int numJogos){
-		super(nome, genero);
+	public Jogador(int id, String nome, Genero genero, int recorde, int numJogos){
+		super(id,nome, genero);
 		this.setNumJogos(numJogos);
 		this.setRecorde(recorde);
 	}
