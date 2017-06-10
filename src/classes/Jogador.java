@@ -27,4 +27,12 @@ public class Jogador extends Pessoa {
 		this.numJogos = numJogos;
 	}
 	
+	public void print(){
+		System.out.println(this.getNome());
+		System.out.println(this.getGenero());
+		System.out.println(this.getNumJogos());
+		System.out.println(this.getRecorde());
+
+	}
+	
 }

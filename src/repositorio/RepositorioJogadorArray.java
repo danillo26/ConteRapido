@@ -13,11 +13,11 @@ public class RepositorioJogadorArray  implements RepositorioJogador {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public boolean procurarJogador(int id) throws JogadorNaoEncontradoException {
+	public Jogador procurarJogador(int id) throws JogadorNaoEncontradoException {
 		int pos = getindex(id);
-		if (pos == -1)throw new JogadorNaoEncontradoException();
+		if (pos == -1) throw new JogadorNaoEncontradoException();
 		
-		return pos!=-1;
+		return jogadores[pos];
 	}	
 	
 

@@ -14,10 +14,10 @@ public class RepositorioJogadorLista implements RepositorioJogador {
 	}
 	
 	
-	public boolean procurarJogador(int id) throws JogadorNaoEncontradoException{
+	public Jogador procurarJogador(int id) throws JogadorNaoEncontradoException{
 		int pos = getindex(id);
 		if (pos == -1)throw new JogadorNaoEncontradoException();
-		return pos!=-1;
+		return array.get(pos);
 	}
 	
 	public void removerJogador(int id) throws JogadorNaoEncontradoException{

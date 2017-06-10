@@ -5,7 +5,7 @@ import excessoes.*;
 
 public interface RepositorioJogador {
 
-	public boolean procurarJogador(int id) throws JogadorNaoEncontradoException;
+	public Jogador procurarJogador(int id) throws JogadorNaoEncontradoException;
 	
 	public void removerJogador(int id) throws JogadorNaoEncontradoException;
 	
