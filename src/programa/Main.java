@@ -1,6 +1,9 @@
 package programa;
 
-import repositorio.RepositorioJogadorLista;
+import classes.Genero;
+import classes.Jogador;
+import repositorio.*;
+import utilitarios.GeradorId;
 
 public class Main {
 	
@@ -8,9 +11,12 @@ public class Main {
 		System.out.println(s);
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		RepositorioJogadorLista repositorio = new RepositorioJogadorLista();
+		RepositorioJogador repositorio;// = new RepositorioJogadorLista();
+		if(true){
+			repositorio = new RepositorioJogadorArray();
+		}
 		java.util.Scanner in= new java.util.Scanner(System.in);
 		
 		print("1. Logar");
@@ -23,7 +29,7 @@ public class Main {
 		else if(resposta==2){
 			
 		}
-		else{}
+		//else{}
 		
 	}
 

@@ -14,20 +14,26 @@ public class RepositorioJogadorLista implements RepositorioJogador {
 	}
 	
 	
-	public boolean procurarJogador(Jogador jogador) throws JogadorNaoEncontradoException{
-		int pos = getindex(jogador);
+	public boolean procurarJogador(int id) throws JogadorNaoEncontradoException{
+		int pos = getindex(id);
 		if (pos == -1)throw new JogadorNaoEncontradoException();
 		return pos!=-1;
 	}
 	
-	public void removerJogador(Jogador jogador) throws JogadorNaoEncontradoException{
-		int pos = getindex(jogador);
+	public void removerJogador(int id) throws JogadorNaoEncontradoException{
+		int pos = getindex(id);
 		if (pos == -1)throw new JogadorNaoEncontradoException();
 		else array.remove(pos);
 	}
 	
 	public void adicionarJogador(Jogador jogador) throws JogadorJaAdiconadoException{
-		int pos = getindex(jogador);
+		int pos = -1;
+		for(int i = 0; i < array.size();i++){
+			if(array.get(i).getNome().equals(jogador.getNome())){
+				pos =i;
+				break;
+			}
+		}
 		if(pos!=-1)throw new JogadorJaAdiconadoException();
 		else array.add(jogador);
 	}
@@ -36,12 +42,14 @@ public class RepositorioJogadorLista implements RepositorioJogador {
 		for(int i= 0; i < array.size(); i++ ){
 			System.out.println(array.get(i).getNome());
 			System.out.println(array.get(i).getGenero());
+			System.out.println(array.get(i).getId());
+			System.out.println("----------------------------");
 		}
 	}
 	
-	public int getindex(Jogador jogador){
+	public int getindex(int id){
 		for(int i= 0; i < array.size(); i++ ){
-			if(array.get(i).getId()==jogador.getId()){
+			if(array.get(i).getId()==id){
 				return i;
 			}
 		}

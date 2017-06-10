@@ -5,6 +5,7 @@ public class Pessoa {
 	private Genero genero;
 	
 	public Pessoa(int id,String nome,Genero genero){
+		this.setId(id);
 		this.setNome(nome);
 		this.setGenero(genero);
 	}
