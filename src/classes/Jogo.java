@@ -2,12 +2,14 @@ package classes;
 
 public abstract class Jogo {
 	
-	private int tipo;
-	private Dificuldade dificuldade;
+
+	public Dificuldade dificuldade;
 	
-	public Jogo(int tipo, Dificuldade dificuldade){
-		this.tipo = tipo;
+	public Jogo( Dificuldade dificuldade){
+		
 		this.dificuldade = dificuldade;
+		
 	}
-	
+	public abstract void desafio();
 }
+	

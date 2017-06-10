@@ -23,7 +23,7 @@ public class Util {
 		if (op == Operacao.adicao) return a+b;
 		else if (op == Operacao.multiplicacao) return a*b;
 		else if (op == Operacao.subtracao) return a-b;
-		else return a/b;
+		else return b/a;
 	}
 	
 }
