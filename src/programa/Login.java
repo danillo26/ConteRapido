@@ -5,13 +5,13 @@ import excessoes.JogadorNaoEncontradoException;
 
 public class Login {
 	
-	public static void login() throws JogadorNaoEncontradoException{
+	public static void login() throws JogadorNaoEncontradoException, InterruptedException{
 		
 		System.out.print("Digite seu id: ");
-		int id = Tela1.in.nextInt();
+		int id = Main.in.nextInt();
 		
-		Jogador jogador = Tela1.repositorio.procurarJogador(id);
-		Tela1.print("JOGADOR ENCONTRADO! ");
+		Jogador jogador = Main.repositorio.procurarJogador(id);
+		Main.print("JOGADOR ENCONTRADO! ");
 		jogador.print();
 		
 		SelecaoJogo.selecaoJogo();

@@ -1,20 +1,46 @@
 package programa;
 
 
-import classes.Dificuldade;
-import classes.JogoNumero;
+//import classes.Dificuldade;
+import classes.*;
 
 public class TelaJogoNumero {
-
-	public static void jogar(){
+	
+	public static void jogar() throws InterruptedException{
+	
+		Jogo jogo = new JogoFacil();
 		
-		JogoNumero jogo = new JogoNumero(Dificuldade.facil);
-		jogo.desafio();
-		int resposta = Tela1.in.nextInt();
-		System.out.println((resposta == jogo.resultado?"Acertou":"Errou"));
+		UserInput ui = new UserInput();
+		
+		long tempoInicial = System.currentTimeMillis()/1000;
 		
 		
+		ui.start();
 		
+		boolean acertou = true;
+	
+		int numAcertos = 0;
+		
+		for(int i = 0; i < 20; i++) System.out.println();
+		
+		while(tempo(tempoInicial)){
+			if(acertou) jogo.desafio();
+			
+			acertou = false;
+			
+			if(ui.getResposta() == jogo.getResultado()){
+				acertou = true;
+				numAcertos++;
+			}
+			
+		}
+		
+		System.out.println("saiu! voce acertou " + numAcertos);
+		
+	}
+	
+	public static boolean tempo(long tempoInicial){
+		return (System.currentTimeMillis()/1000) < (tempoInicial + 30);
 	}
 	
 	

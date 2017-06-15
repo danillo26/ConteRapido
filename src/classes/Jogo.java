@@ -2,14 +2,29 @@ package classes;
 
 public abstract class Jogo {
 	
-
-	public Dificuldade dificuldade;
+	private int record;
+	private int resultado;
 	
-	public Jogo( Dificuldade dificuldade){
-		
-		this.dificuldade = dificuldade;
+	public Jogo(){
 		
 	}
+	
 	public abstract void desafio();
+
+	public int getRecord() {
+		return record;
+	}
+
+	public void setRecord(int record) {
+		this.record = record;
+	}
+
+	public int getResultado() {
+		return resultado;
+	}
+
+	public void setResultado(int resultado) {
+		this.resultado = resultado;
+	}
 }
 	

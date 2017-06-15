@@ -5,7 +5,7 @@ import classes.Jogador;
 import repositorio.*;
 import utilitarios.GeradorId;
 
-public class Tela1 {
+public class Main {
 
 	public static RepositorioJogador repositorio = new RepositorioJogadorArray();
 	public static java.util.Scanner in = new java.util.Scanner(System.in);
@@ -16,7 +16,7 @@ public class Tela1 {
 
 	public static void main(String[] args) throws Exception {
 		
-		
+		repositorio.adicionarJogador(new Jogador(0, "Daniel", Genero.homem, 0, 0));
 		
 		print("1. Logar");
 		print("2. Cadastrar");
