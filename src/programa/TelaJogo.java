@@ -50,15 +50,13 @@ public class TelaJogo {
 		try {
 			ui.join();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//while(true){Main.in.nextLine();}
 		
 	}
 	
 	public static boolean tempo(long tempoInicial){
-		return (System.currentTimeMillis()/1000) < (tempoInicial + 10);
+		return (System.currentTimeMillis()/1000) < (tempoInicial + 30);
 	}
 	
 	
