@@ -5,10 +5,10 @@ public class Jogador extends Pessoa {
 	private int recorde;
 	private int numJogos;
 	
-	public Jogador(int id, String nome, Genero genero, int recorde, int numJogos){
+	public Jogador(int id, String nome, Genero genero){
 		super(id,nome, genero);
-		this.setNumJogos(numJogos);
-		this.setRecorde(recorde);
+		this.setNumJogos(0);
+		this.setRecorde(0);
 	}
 
 	public int getRecorde() {

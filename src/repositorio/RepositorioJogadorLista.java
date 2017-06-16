@@ -14,19 +14,30 @@ public class RepositorioJogadorLista implements RepositorioJogador {
 	}
 	
 	
-	public Jogador procurarJogador(int id) throws JogadorNaoEncontradoException{
-		int pos = getindex(id);
-		if (pos == -1)throw new JogadorNaoEncontradoException();
-		return array.get(pos);
+	public Jogador procurarJogador(int id) {
+		try{
+			int pos = getindex(id);
+			if (pos == -1) throw new JogadorNaoEncontradoException();
+			return array.get(pos);
+		}
+		catch(JogadorNaoEncontradoException e){
+			System.err.println(e.getMessage());
+		}
+		return null;
 	}
 	
-	public void removerJogador(int id) throws JogadorNaoEncontradoException{
-		int pos = getindex(id);
-		if (pos == -1)throw new JogadorNaoEncontradoException();
-		else array.remove(pos);
+	public void removerJogador(int id) {
+		try{
+			int pos = getindex(id);
+			if (pos == -1)throw new JogadorNaoEncontradoException();
+			else array.remove(pos);
+		}
+		catch(JogadorNaoEncontradoException e){
+			System.err.println(e.getMessage());
+		}
 	}
 	
-	public void adicionarJogador(Jogador jogador) throws JogadorJaAdiconadoException{
+	public void adicionarJogador(Jogador jogador) {
 		int pos = -1;
 		for(int i = 0; i < array.size();i++){
 			if(array.get(i).getNome().equals(jogador.getNome())){
@@ -34,11 +45,17 @@ public class RepositorioJogadorLista implements RepositorioJogador {
 				break;
 			}
 		}
-		if(pos!=-1)throw new JogadorJaAdiconadoException();
-		else array.add(jogador);
+		try{
+			if(pos!=-1)throw new JogadorJaAdiconadoException();
+			array.add(jogador);
+		}
+		catch(JogadorJaAdiconadoException e){
+			System.err.println(e.getMessage());
+		}
 	}
 	
 	public void listarJogadores(){
+		System.out.println("----------------------------");
 		for(int i= 0; i < array.size(); i++ ){
 			System.out.println(array.get(i).getNome());
 			System.out.println(array.get(i).getGenero());
@@ -54,6 +71,10 @@ public class RepositorioJogadorLista implements RepositorioJogador {
 			}
 		}
 		return -1;
+	}
+	
+	public int size(){
+		return this.array.size();
 	}
 	
 	

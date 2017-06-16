@@ -3,8 +3,8 @@ package classes;
 import utilitarios.Operacao;
 import utilitarios.Util;
 
-public class JogoFacil extends Jogo {
-	
+public class JogoMedio extends Jogo {
+
 	public void desafio() {
 		java.util.Random r = new java.util.Random();
 		Operacao[] operacoes = { Operacao.adicao, Operacao.subtracao, Operacao.multiplicacao, Operacao.divisao };
@@ -15,23 +15,23 @@ public class JogoFacil extends Jogo {
 
 		switch (operacao) {
 		case adicao:
-			a = Util.numeroEntre(1, 15);
-			b = Util.numeroEntre(1, 15);
+			a = Util.numeroEntre(10, 25);
+			b = Util.numeroEntre(10, 25);
 			break;
 
 		case subtracao:
+			a = Util.numeroEntre(10, 25);
+			b = Util.numeroEntre(10, 25);
+			break;
+
+		case multiplicacao:
 			a = Util.numeroEntre(5, 15);
 			b = Util.numeroEntre(5, 15);
 			break;
 
-		case multiplicacao:
-			a = Util.numeroEntre(0, 10);
-			b = Util.numeroEntre(0, 10);
-			break;
-
 		case divisao:
-			b = Util.numeroEntre(5, 15);
-			a = Util.multiplo(a, Dificuldade.facil);
+			b = Util.numeroEntre(10, 25);
+			a = Util.multiplo(a, Dificuldade.medio);
 			break;
 		}
 		setResultado(Util.operar(a, operacao, b));
