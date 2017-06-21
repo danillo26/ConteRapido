@@ -23,8 +23,10 @@ public abstract class Jogo {
 		return resultado;
 	}
 
-	public void setResultado(int resultado) {
+	public boolean setResultado(int resultado) {
+		if(resultado == this.resultado) return false;
 		this.resultado = resultado;
+		return true;
 	}
 }
 	

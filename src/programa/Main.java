@@ -47,7 +47,6 @@ public class Main {
 			print("\t-Voce recebera varias contas");
 			print("\t-Voce deve resolver o maximo possivel");
 			print("\t-Voce tem apenas 30 segundos para isso");
-			print("\n\t-Algumas contas sao armadilhas, voce deve resolver so a mais abaixo!");
 			print("----------------------------");
 		}
 		else if(resposta==4){

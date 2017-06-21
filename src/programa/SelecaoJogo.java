@@ -29,17 +29,17 @@ public class SelecaoJogo {
 			while(tempo(tempoInicial)){
 				if(System.currentTimeMillis()/1000 == tempoInicial + 1&& seg[0]){
 					print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-					print("O jogo vai começar em 3");
+					print("O jogo vai comecar em 3");
 					seg[0] = false;
 				}
 				if(System.currentTimeMillis()/1000 == tempoInicial + 2 && seg[1]){
 					print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-					print("O jogo vai começar em 2");
+					print("O jogo vai comecar em 2");
 					seg[1] = false;
 				}
 				if(System.currentTimeMillis()/1000 == tempoInicial + 3 && seg[2]){
 					print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-					print("O jogo vai começar em 1");
+					print("O jogo vai comecar em 1");
 					seg[2] = false;
 				}
 						

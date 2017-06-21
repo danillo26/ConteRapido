@@ -34,8 +34,10 @@ public class JogoDificil extends Jogo {
 			a = Util.multiplo(a, Dificuldade.dificil);
 			break;
 		}
-		setResultado(Util.operar(a, operacao, b));
-		System.out.println(a + " " + operacao + " " + b);		
+		if(setResultado(Util.operar(a, operacao, b))){
+			System.out.println(a + " " + operacao + " " + b);
+		}
+		else desafio();		
 	}
 
 
